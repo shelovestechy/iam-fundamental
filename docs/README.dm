@@ -22,3 +22,6 @@
 
 ## 5) Access models
 - [RBAC, ABAC and hybrid approaches](access-models.md)
+
+## 6) Conditional Access
+- [Conditional Access and risk-based thinking](conditional-access.md)
