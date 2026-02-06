@@ -1,21 +1,29 @@
 # IAM Fundamentals
 
-This repository is a practical, beginner-to-intermediate overview of Identity & Access Management (IAM).
-The focus is on core concepts, access models, and understanding how IAM decisions reduce real-world risk.
+<hr style="border:none; height:2px; background:#f3c1d9; margin:16px 0;" />
+
+This repository is a practical IAM portfolio focused on identity lifecycle thinking,
+access design, and real-world risk scenarios.
+
+The content reflects how Identity & Access Management works in real organizations:
+not as isolated technical features, but as processes that evolve over time.
+
+<p style="color:#d99abf;">
+IAM is as much about clarity and restraint as it is about access.
+</p>
 
 ## What's inside
-- **Core IAM concepts** (IAM / IGA / PAM / CIAM)
+- **Core IAM concepts** (IAM, IGA, PAM, CIAM)
 - **Identity lifecycle** (Joiner–Mover–Leaver)
-- **Access models** (RBAC, ABAC and hybrid approaches)
-- **AuthN vs AuthZ** (authentication vs authorization)
-- **AD vs Entra ID** basics and hybrid reality
-- **Conditional Access** and risk-based access decisions
-- **Common risks & controls** (MFA, least privilege, access reviews)
+- **Access models** (RBAC, ABAC, hybrid approaches)
+- **Conditional Access** and contextual risk
+- **Incident, risk, and design case studies** based on realistic IAM scenarios
 
 ## Structure
-- `docs/` — short, focused explanations and written analysis
-- `diagrams/` — simple diagrams (PNG/SVG) to visualize IAM models and flows
+- `docs/` — written analysis, design reasoning, and case studies
+- `diagrams/` — simple diagrams to support lifecycle and access concepts
 
 ## Why this exists
-This repository is part of an IAM-focused portfolio.
-Its purpose is to demonstrate clear thinking, structured documentation, and a risk-aware approach to identity and access management.
+This repository demonstrates IAM thinking rather than tool-specific configuration.
+It focuses on clarity, structure, and understanding how small design decisions
+affect long-term security, risk, and maintainability.
