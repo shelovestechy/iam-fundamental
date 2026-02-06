@@ -1,27 +1,29 @@
 # Docs
 
-## 1) IAM, IGA, PAM, CIAM — quick map
-- **IAM**: the umbrella. Identity + access controls + policies.
-- **IGA (Identity Governance & Administration)**: managing access *at scale* (requests, approvals, reviews, lifecycle).
-- **PAM (Privileged Access Management)**: protecting high-power accounts (admins), limiting blast radius.
-- **CIAM (Customer IAM)**: identities for external users (customers), focused on UX + security.
+This directory contains written material that explains IAM concepts, design thinking,
+and real-world risk scenarios.
+The focus is on clarity, structure, and practical reasoning rather than tooling.
 
-## 2) Authentication vs Authorization
-- **Authentication (AuthN)**: Who are you?
-- **Authorization (AuthZ)**: What are you allowed to do?
+## 1) IAM fundamentals
+- **IAM, IGA, PAM, CIAM** — core concepts and scope
+- **Authentication vs Authorization** — identity vs permissions
+- **AD vs Entra ID (Azure AD)** — on-prem, cloud, and hybrid reality
 
-## 3) Joiner–Mover–Leaver (JML)
-- **Joiner**: new identity + baseline access
-- **Mover**: role change → access must change safely (remove old, add new)
-- **Leaver**: access removal + account handling (disable/delete, retention)
+## 2) Identity lifecycle
+- [Identity lifecycle (Joiner–Mover–Leaver)](identity-lifecycle.md)
 
-## 4) AD vs Entra ID (Azure AD)
-- **AD**: on-prem directory, device + legacy app world, group policy history
-- **Entra ID**: cloud identity, modern auth, conditional access, SSO to SaaS
-- **Hybrid**: common in real orgs; complexity and misconfig risk increase
-
-## 5) Access models
-- [RBAC, ABAC and hybrid approaches](access-models.md)
-
-## 6) Conditional Access
+## 3) Access design
+- [Access models: RBAC, ABAC and hybrid approaches](access-models.md)
 - [Conditional Access and risk-based thinking](conditional-access.md)
+
+## 4) Case studies and design scenarios
+
+### Incident and risk cases
+- [IAM incident case: excessive access after role change](iam-incident-case.md)
+- [Attribute-based access risk case](abac-risk-case.md)
+- [Conditional Access case: trusted user, untrusted context](conditional-access-context-case.md)
+
+### Design and process cases
+- [Joiner automation without over-permissioning](joiner-automation-case.md)
+- [Leaver lifecycle and automation considerations](leaver-lifecycle-case.md)
+- [Access review governance failure case](access-review-failure-case.md)
