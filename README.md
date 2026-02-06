@@ -6,10 +6,11 @@ Focus: core concepts, common models, and how IAM decisions reduce real-world ris
 ## What's inside
 - **Core IAM concepts** (IAM / IGA / PAM / CIAM)
 - **Identity lifecycle** (Joiner–Mover–Leaver)
+- **Access models** (RBAC, ABAC and hybrid approaches)
 - **AuthN vs AuthZ** (authentication vs authorization)
 - **AD vs Entra ID** basics and hybrid reality
 - **Common risks & controls** (MFA, least privilege, conditional access thinking)
-
+  
 ## Structure
 - `docs/` — short notes and explanations
 - `diagrams/` — simple diagrams (PNG/SVG) to visualize models
