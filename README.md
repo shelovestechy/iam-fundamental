@@ -1,6 +1,6 @@
 # IAM Fundamentals
 
-<hr style="border:none; height:2px; background:#f3c1d9; margin:16px 0;" />
+<div style="height:2px; background-color:#f3c1d9; margin:16px 0;"></div>
 
 This repository is a practical IAM portfolio focused on identity lifecycle thinking,
 access design, and real-world risk scenarios.
