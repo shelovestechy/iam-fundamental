@@ -1,70 +1,86 @@
 # IAM Incident Case Study: Excessive Access After Role Change
 
-This case study describes a realistic access-related incident caused by weak identity lifecycle controls.
-The purpose is not to assign blame, but to understand how IAM failures accumulate over time.
+This case describes a realistic access incident caused by weak identity lifecycle controls.
+The goal is not to blame anyone.
+The goal is to understand how IAM problems build up over time.
 
 ## Background
 
-A mid-sized organization uses role-based access control combined with attribute-based automation.
-User access is primarily assigned based on job title and department.
+A mid-sized organization uses role based access together with attribute based automation.
+User access is mainly assigned using job title and department.
 
-The organization has a documented Joiner process.
-Mover and Leaver processes exist, but rely heavily on manual actions and assumptions.
+The Joiner process is documented and works reasonably well.
+Mover and Leaver processes exist,
+but they depend heavily on manual actions and assumptions.
 
 ## The incident
 
-An employee changes role from a regional support position to a centralized reporting role.
-The job title attribute is updated, and new access is granted automatically.
+An employee moves from a regional support role
+to a centralized reporting role.
 
-However, access related to the previous role is not removed.
+The job title attribute is updated.
+New access is granted automatically.
 
-As a result, the user retains:
-- Reporting access for the new role
-- Operational access tied to the previous regional role
+Access from the old role is not removed.
 
+The user now has:
+- Reporting access needed for the new role
+- Operational access from the old regional role
+
+Nothing breaks.
 No alerts are triggered.
-The user continues working normally.
+The user keeps working as usual.
 
 ## Detection
 
-The issue is discovered months later during a routine access review.
-By this point, the access accumulation has gone unnoticed and unchallenged.
+The issue is found months later during a regular access review.
+By this time the extra access has existed for a long time
+without anyone noticing or questioning it.
 
-There is no evidence of malicious intent.
-The risk existed regardless.
+There is no sign of malicious intent.
+The risk exists anyway.
 
 ## Root causes
 
-The incident is not caused by a single failure.
+The incident is not caused by one single mistake.
 
-Contributing factors include:
-- Mover events not triggering mandatory access reviews
-- Attribute-based access logic without sufficient scoping
-- No clear ownership over access removal
-- Assumption that automation alone ensures correctness
+Several things contribute to it:
+- Mover events do not trigger a required access review
+- Attribute based access rules are too broad
+- No clear owner for access removal
+- Trust that automation will always do the right thing
+
+Each part works on its own.
+Together they create risk.
 
 ## IAM perspective
 
-This incident highlights a common IAM weakness:
-access is easier to grant than to remove.
+This incident shows a common IAM weakness:
+access is easy to give
+and hard to take away.
 
-Automation improved efficiency, but amplified design gaps.
-The system behaved exactly as designed.
+Automation makes work faster,
+but it also makes design problems bigger.
 
-The design itself was the problem.
+The system works exactly as designed.
+The design is the problem.
 
 ## How this could have been prevented
 
-Preventive measures include:
-- Mandatory access review on all Mover events
-- Explicit separation between baseline and elevated access
-- Clear ownership of role-to-access mappings
-- Periodic validation of attribute-driven access logic
+Some simple controls would reduce this risk:
+- Required access review after every Mover event
+- Clear separation between baseline access and elevated access
+- Clear ownership of role and access mappings
+- Regular review of attribute based access logic
 
 ## Key takeaway
 
-IAM incidents often develop quietly.
-They are not dramatic failures, but slow accumulations of unchecked access.
+IAM incidents often grow quietly.
+They are rarely dramatic.
 
-Effective IAM focuses less on reacting to incidents,
-and more on designing processes that make incidents unlikely.
+Most of the time they are slow build-ups
+of access that no longer matches reality.
+
+Strong IAM focuses less on reacting to incidents
+and more on building processes
+that make these situations unlikely.
