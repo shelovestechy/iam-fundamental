@@ -1,7 +1,7 @@
 # IAM Fundamentals
 
 This repository is a practical, beginner-to-intermediate overview of Identity & Access Management (IAM).
-Focus: core concepts, common models, and how IAM decisions reduce real-world risk.
+The focus is on core concepts, access models, and understanding how IAM decisions reduce real-world risk.
 
 ## What's inside
 - **Core IAM concepts** (IAM / IGA / PAM / CIAM)
@@ -9,11 +9,13 @@ Focus: core concepts, common models, and how IAM decisions reduce real-world ris
 - **Access models** (RBAC, ABAC and hybrid approaches)
 - **AuthN vs AuthZ** (authentication vs authorization)
 - **AD vs Entra ID** basics and hybrid reality
-- **Common risks & controls** (MFA, least privilege, conditional access thinking)
-  
+- **Conditional Access** and risk-based access decisions
+- **Common risks & controls** (MFA, least privilege, access reviews)
+
 ## Structure
-- `docs/` — short notes and explanations
-- `diagrams/` — simple diagrams (PNG/SVG) to visualize models
+- `docs/` — short, focused explanations and written analysis
+- `diagrams/` — simple diagrams (PNG/SVG) to visualize IAM models and flows
 
 ## Why this exists
-I’m building an IAM-focused portfolio that demonstrates clear thinking, documentation, and risk-based design.
+This repository is part of an IAM-focused portfolio.
+Its purpose is to demonstrate clear thinking, structured documentation, and a risk-aware approach to identity and access management.
