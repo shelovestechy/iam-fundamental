@@ -1,84 +1,94 @@
 # IAM Governance Case: Access Reviews That Don’t Actually Review Anything
 
-This case describes a common IAM governance failure: access reviews that exist in process,
-but fail in practice.
+This case describes a common IAM governance failure.
+Access reviews exist as a process,
+but they fail in real life.
 
-The review is completed.
-Compliance is satisfied.
-Risk remains.
+The review is done.
+Compliance is happy.
+Risk stays.
 
 ## Background
 
-An organization runs periodic access reviews to meet compliance and audit requirements.
-Managers and application owners are asked to review user access and confirm whether it is still appropriate.
+The organization runs access reviews to meet audit and compliance needs.
+Managers and application owners are asked to check user access
+and confirm that it is still correct.
 
 The process is documented.
-The tooling exists.
-Completion rates are high.
+The tools exist.
+Completion rates look good.
 
 ## The situation
 
-Access reviews are triggered quarterly.
+Access reviews run every quarter.
 Reviewers receive long lists of users and permissions.
 
 In practice:
-- Reviewers do not fully understand the access they are approving
+- Reviewers do not fully understand the access
 - Business context is missing or outdated
-- Time pressure encourages fast completion
+- Time pressure pushes people to finish fast
 
-Most reviews result in “approve all”.
+Most reviews end with “approve all”.
 
-No changes are made.
-The review is technically successful.
+No access is removed.
+The review is marked as completed.
 
 ## Why the review fails
 
-The failure is not caused by negligence.
-It is caused by poor design.
+The problem is not laziness.
+It is design.
 
-Key problems include:
-- Too many permissions reviewed at once
-- No clear ownership of specific access rights
-- Lack of context explaining *why* access exists
-- No differentiation between low-risk and high-risk access
+Main issues are:
+- Too much access reviewed at once
+- No clear owner for individual permissions
+- No explanation why access exists
+- No difference between low risk and high risk access
 
-Reviewers are asked to make decisions without the information needed to make them well.
+People are asked to make decisions
+without enough information to make them well.
 
 ## Governance fatigue
 
-Repeated ineffective reviews create governance fatigue.
+When reviews repeat without results,
+people stop taking them seriously.
 
 Over time:
-- Reviews are seen as a formality
+- Reviews feel like a checkbox task
 - Approvals become automatic
-- Responsibility becomes symbolic rather than real
+- Responsibility becomes symbolic
 
-The process continues, but its value decreases with every cycle.
+The process keeps running,
+but its value drops every time.
 
 ## IAM perspective
 
-Access reviews should support decision-making, not overwhelm it.
+Access reviews should help people decide.
+They should not overwhelm them.
 
-Effective reviews are:
-- Scoped narrowly
-- Focused on high-risk or sensitive access
+Good reviews are:
+- Small and focused
+- Aimed at risky or sensitive access
 - Owned by people who understand the access
-- Designed to result in real change
+- Designed to cause real change
 
-Reviewing everything means reviewing nothing.
+Reviewing everything usually means reviewing nothing.
 
-## How this could have been improved
+## How this could be improved
 
-Improvements include:
-- Separating baseline access from elevated access
-- Reviewing only access that exceeds role expectations
-- Providing clear access descriptions and justification
-- Assigning ownership at the access level, not just the user level
+Some simple changes help a lot:
+- Separate baseline access from elevated access
+- Review only access that goes beyond the role
+- Explain clearly what the access is and why it exists
+- Assign ownership to access not just to users
 
-A smaller, meaningful review is more valuable than a complete but meaningless one.
+One meaningful review is worth more
+than many empty approvals.
 
 ## Key takeaway
 
-Access reviews fail when they prioritize completion over understanding.
+Access reviews fail when finishing the task
+matters more than understanding the access.
 
-Good IAM governance accepts that fewer, better reviews reduce more risk than broad, empty approval cycles.
+Good IAM governance accepts that fewer better reviews
+reduce more risk
+than wide empty approval cycles.
