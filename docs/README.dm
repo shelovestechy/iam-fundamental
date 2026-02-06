@@ -19,3 +19,6 @@
 - **AD**: on-prem directory, device + legacy app world, group policy history
 - **Entra ID**: cloud identity, modern auth, conditional access, SSO to SaaS
 - **Hybrid**: common in real orgs; complexity and misconfig risk increase
+
+## 5) Access models
+- [RBAC, ABAC and hybrid approaches](access-models.md)
