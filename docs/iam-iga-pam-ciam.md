@@ -2,7 +2,7 @@
 
 IAM concepts are often explained as acronyms.
 In real organizations they exist because identity problems look different
-depending on scale, power and audience.
+depending on scale power and audience.
 
 They are not tools first.
 They are questions.
@@ -13,73 +13,73 @@ IAM answers a simple question:
 who has access to what and why?
 
 Most IAM failures are not technical.
-They happen because access decisions are never revisited.
+They happen because access decisions are never looked at again.
 
-IAM works when identity is treated as something that changes over time,
-not as a one-time setup.
+IAM works when identity is treated as something that changes over time
+not as a one time setup.
 
 ## Case: IAM without lifecycle thinking
 
 An organization has modern authentication and good tools.
-Access is granted fast and users are productive.
+Access is granted fast and users can work.
 
 Over time:
-- roles gain permissions
+- roles slowly gain permissions
 - exceptions stay forever
-- no one remembers the reason for access
+- no one remembers why access exists
 
 The system works as designed.
 Risk still grows.
 
 ## IGA — when access no longer scales
 
-IGA exists because access cannot be handled manually at scale.
+IGA exists because access does not scale well with people and systems.
 
-It introduces structure:
-requests, approvals, reviews and lifecycle rules.
+It adds structure:
+requests approvals reviews and lifecycle rules.
 
 ## Case: governance that looks good on paper
 
-Access reviews are completed on time.
+Access reviews are completed on schedule.
 Managers approve access because they trust the system
-or do not understand the details.
+or because they do not understand the details.
 
-Compliance is met.
+Compliance looks fine.
 Nothing really changes.
 
-Governance without understanding becomes routine.
+Governance without understanding turns into routine.
 
 ## PAM — limiting the blast radius
 
-PAM focuses on accounts with high impact.
-If something goes wrong the damage is immediate.
+PAM focuses on accounts with a lot of power.
+If something goes wrong the impact is immediate.
 
 PAM is not about mistrust.
-It is about limiting power.
+It is about limiting damage.
 
 ## Case: trusted admin with standing access
 
 An admin has broad permanent access.
 Nothing bad happens for a long time.
 
-When credentials are compromised,
-the impact is large and fast.
+When credentials are compromised
+the damage is large and fast.
 
 PAM would not stop the compromise.
-It would reduce the damage.
+It would limit the impact.
 
 ## CIAM — identity outside the organization
 
-CIAM handles users who are not employees.
-They do not share internal assumptions.
+CIAM deals with users who are not employees.
+They do not share internal rules or assumptions.
 
 Customers do not tolerate friction.
 They leave.
 
 ## Case: internal IAM logic used for customers
 
-Strong internal security rules are reused for customers.
-Login becomes slow and complex.
+Strong internal security rules are reused for customer access.
+Login becomes slow and confusing.
 
 Security improves.
 User experience suffers.
@@ -90,7 +90,8 @@ CIAM needs different tradeoffs.
 
 IAM maturity comes from knowing:
 when governance helps,
-when restriction is needed,
+when restriction is needed
 and when usability matters more.
 
-The acronyms matter less than the judgment behind them.
+The acronyms matter less
+than the judgment behind them.
