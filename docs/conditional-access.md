@@ -1,74 +1,77 @@
-# Conditional Access and Risk-Based Thinking
+# Conditional Access and Risk Based Thinking
 
-Conditional Access is a way to control access based on context.
-Instead of asking only *who* the user is, it asks *under what conditions* access should be allowed.
+Conditional Access controls access using context.
+It does not ask only *who* the user is.
+It asks *under what conditions* access should be allowed.
 
-This approach reduces risk without relying solely on static permissions.
+This helps reduce risk without relying only on static permissions.
 
-## What Conditional Access actually controls
+## What Conditional Access really looks at
 
-Conditional Access decisions are usually based on a combination of signals:
+Conditional Access decisions are usually based on several signals:
 - User identity
 - Device state
 - Location or network
 - Application or resource
 - Risk level
 
-No single signal should be trusted on its own.
+No single signal should be trusted alone.
 
 ## Why context matters
 
-A user can be legitimate and still represent risk.
-The same identity may be safe in one situation and risky in another.
+A user can be valid and still be risky.
+The same identity can be safe in one situation
+and risky in another.
 
 Examples:
-- Trusted user on an unmanaged device
-- Valid credentials from an unusual location
-- Privileged role used outside normal working patterns
+- A trusted user on an unmanaged device
+- Valid credentials from a new or unusual location
+- A privileged role used outside normal patterns
 
-Conditional Access allows organizations to respond to these differences.
+Conditional Access reacts to situations,
+not just identities.
 
 ## Common control patterns
 
-Typical Conditional Access requirements include:
-- Multi-factor authentication for elevated risk
-- Device compliance for sensitive resources
-- Location-based restrictions
-- Blocking legacy authentication
+Typical Conditional Access rules include:
+- MFA when risk is higher
+- Device compliance for sensitive access
+- Location based limits
+- Blocking old or legacy authentication
 
-These controls are not about denying access by default,
-but about **raising the security bar when risk increases**.
+These controls are not meant to block users by default.
+They raise the security level when risk increases.
 
-## Relationship to access models
+## How this fits with access models
 
 Conditional Access does not replace RBAC or ABAC.
-It works alongside them.
+It works with them.
 
-- RBAC defines *what* a role can access
-- ABAC defines *how* access is calculated
-- Conditional Access defines *when and under what conditions* access is allowed
+- RBAC defines what a role can access
+- ABAC defines how access is calculated
+- Conditional Access defines when access is allowed
 
-Good IAM design uses all three layers together.
+Good IAM design uses all of these together.
 
 ## Risk perspective
 
-Conditional Access rules can reduce risk,
-but poorly designed rules can also create blind spots.
+Conditional Access can reduce risk
+but bad rules can also hide problems.
 
-Common mistakes include:
-- Overly broad location rules
-- Too many exceptions added over time
-- No regular review of policies
-- Treating Conditional Access as a one-time setup
+Common issues are:
+- Location rules that are too broad
+- Exceptions that grow over time
+- Policies that are never reviewed
+- Treating Conditional Access as a one time setup
 
 Risk changes.
-Conditional Access policies must evolve with it.
+Conditional Access must change with it.
 
 ## Consultant perspective
 
 Conditional Access is often implemented as a technical feature.
-Its real value comes from understanding organizational risk and user behavior.
+Its real value comes from understanding user behavior and real risk.
 
-Effective policies balance security and usability.
-Too strict rules push users to find workarounds.
+Good policies balance security and usability.
+Too strict rules push users to work around them.
 Too loose rules quietly increase exposure.
