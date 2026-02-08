@@ -36,7 +36,7 @@ A raw look at the line between **AuthN** (Who are you?) and **AuthZ** (What can 
 Shows the critical points (Joiner, Mover, Leaver) where identity controls fail because of process gaps and human reality.
 
 * **Focus:** HR-driven lifecycle flaws, "Mover" events that never get reported, and the mess of incomplete deprovisioning.
-* **Key Idea:** *Lifecycle control doesn't fail at once—it erodes.*
+* **Key Idea:** *Lifecycle control doesn't fail at once—it just falls apart piece by piece.*
 
 ---
 
