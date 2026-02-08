@@ -1,98 +1,57 @@
 # IAM Process Case: When Leaver Is Not a Single Event
 
-This case looks at a common assumption in identity management:
-that a Leaver event is one clear moment when everything ends.
+This case challenges a common assumption in identity management: that a **Leaver event** is a single, clear-cut moment in time. In reality, identities often fade out slowly, and if the process isn't managed correctly, it creates long-term security and financial risks.
 
-In reality identities often fade out slowly.
-They do not stop at a single point in time.
+IAM maturity is defined by how cleanly an organization can "offboard" an identity, not just how it disables a login.
 
-## Background
+---
 
-The organization manages identities for employees consultants and seasonal workers.
-There is a Leaver process but it mostly focuses on disabling accounts
-when employment officially ends.
+## The Reality: The "Half-Leaver" State
+In many organizations, the Leaver process is binary: an account is either *Enabled* or *Disabled*. This oversimplification leads to a "half-leaver" state where the identity is technically locked, but its footprint remains.
 
-Access removal group cleanup and license handling exist
-but they are treated as secondary tasks.
+* **The Problem:** Group memberships, application permissions, and cloud licenses stay attached to the disabled account.
+* **Concept - Identity Hygiene:** Just as a physical workspace needs to be cleaned, a digital identity must be fully stripped of its "belongings" (permissions) to maintain a healthy and auditable environment.
 
-## The situation
+---
 
-Different Leaver scenarios exist at the same time:
-- Employees with long notice periods
-- Consultants whose access should decrease before contracts end
-- Seasonal workers whose accounts are kept disabled for later reuse
+## Why Automation is a Financial and Security Requirement
+Manual offboarding fails because it prioritizes the "urgent" (disabling the account) and ignores the "important" (cleaning up).
 
-Because of this many identities end up in a “half-leaver” state:
-- Accounts are disabled but not cleaned
-- Group memberships stay
-- Licenses remain assigned
-- No one is sure who owns the account anymore
+1.  **Security Risk - Hidden Entitlements:** If a disabled account is ever re-enabled (e.g., by a compromised admin or an accidental restoration), it still possesses all its old high-level access.
+2.  **Financial Risk - Licensing Leak:** Many SaaS platforms (M365, Salesforce, Adobe) charge per assigned user. If an account is disabled but the license isn't revoked, the company continues to pay for a "ghost" user.
+3.  **Concept - Automated Deprovisioning:** The process where the IAM system automatically reaches into every connected application to remove the user’s permissions and licenses the moment the contract ends.
 
-## Why Leaver handling must be automated
+---
 
-Manual Leaver handling does not scale.
+## Seasonal Workers: The "Dormant Account" Trap
+Many organizations keep accounts for seasonal workers or contractors **Dormant** (disabled but intact) to "save time" when they return.
 
-Some actions should always happen automatically:
-- Removal from security and access groups
-- Removal from role based access
-- License removal
+* **Concept - Dormant Account:** An inactive account that sits in the system for a long period without being deleted.
+* **The Risk - Stale Attributes:** When the worker returns, their old attributes (Job Title, Department, Manager) might be outdated. If automation is based on these stale attributes, the user is instantly granted the wrong access.
+* **Strategic Insight:** Deleting the identity is almost always safer. Recreating an account via a clean **Joiner process** ensures that the user gets *today's* required access, not *last year's* leftovers.
 
-From a security view leftover group memberships are hidden risk.
-From a financial view unused licenses are real ongoing cost.
+---
 
-Leaver automation is not only security.
-It is also cost control.
+## The "Fade-Out" Scenarios
+A mature Leaver process must handle different speeds of exit:
 
-## Seasonal workers and dormant accounts
+* **The Notice Period:** Access should be gradually reduced. A developer leaving for a competitor might have their "Write" access to source code revoked immediately, while keeping their email until the last day.
+* **The Consultant Exit:** Access should expire automatically based on a **Contract End Date** attribute, regardless of whether a manager remembers to file a manual ticket.
+* **The "Grace Period":** In some cases, access to personal HR files or tax documents must remain for 30 days while all other business access is cut.
 
-Seasonal or temporary workers often return.
-Because of this accounts are often disabled instead of deleted.
+---
 
-This raises a simple question:
-is keeping dormant accounts really worth the risk?
+## IAM Perspective: Getting Back to a Clean State
+Leaver management is not just about stopping a person from logging in; it’s about **Inventory Management**.
 
-Common risks include:
-- Old group memberships no one remembers
-- Attributes that no longer match reality
-- Poor visibility and unclear ownership
-- Larger attack surface
+* **Access Groups:** Accounts must be removed from all security groups to keep the directory clean and prevent "nested group" risks.
+* **Ownership Transfer:** If the leaver owned files, shared mailboxes, or automated workflows (e.g., Power Automate/Logic Apps), these must be transferred to a new owner *before* the account is deleted.
 
-Creating a new account later is usually cheap.
-Cleaning up after a forgotten account is not.
+---
 
-## Why deletion is often safer
+## Key Takeaway
+Leaver events are often slow and messy, but **access removal must be surgical.**
 
-Deleting identities forces a reset.
+Automation ensures that access groups and licenses are removed consistently and immediately. When in doubt, it is safer to **delete and recreate** than to maintain a library of dormant identities. 
 
-When a seasonal worker returns:
-- A new Joiner event happens
-- Access is evaluated again
-- Automation applies current rules not old assumptions
-
-This reduces risk and long term complexity.
-
-Account recreation is a process cost.
-Dormant identities are a risk cost.
-
-## IAM perspective
-
-Leaver management is not just about disabling access.
-It is about getting back to a clean state.
-
-Good IAM design treats Leaver automation as:
-- Fast risk reduction
-- License and cost optimization
-- Preparation for future Joiner events
-
-A clean exit makes the next entry safer.
-
-## Key takeaway
-
-Leaver events are often slow and messy.
-Access removal should not be.
-
-Automation helps ensure that access groups and licenses
-are removed consistently.
-
-When unsure it is usually safer to remove and recreate identities
-than to keep them dormant.
+**A clean exit is the only way to ensure a safe entry for the next Joiner.**
