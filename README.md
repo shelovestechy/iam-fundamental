@@ -2,6 +2,17 @@
 
 This repository is a **structured roadmap and learning portfolio** of an aspiring IAM Specialist. It documents my journey from handling daily identity operations at the Service Desk to understanding the deep architectural logic of Identity & Access Management.
 
+---
+
+## 🚀 Career Goal & Vision
+
+My goal is to evolve from a Service Desk Specialist into an **IAM Consultant**. 
+
+I believe that the best consultants are those who have seen firsthand how security policies affect end-users and help-desk operations. This portfolio demonstrates my commitment to:
+* **Deep Systems Thinking:** Moving beyond "clicking buttons" to understanding identity lifecycles.
+* **Proactive Security:** Identifying how manual L1 tasks can be transformed into secure, automated processes.
+* **Knowledge Sharing:** Translating complex IAM concepts into understandable security culture for organizations.
+
 > **The Practitioner's Perspective:**
 > My daily work involves Entra ID and Azure AD, starting from the basics: password resets and user onboarding. However, seeing the same issues repeat in L1 tickets sparked a passion to understand the "why" behind the "how." This repository is my deep-dive into the L2/L3 logic, aimed at bridging the gap between technical execution and high-level IAM consulting.
 
@@ -40,17 +51,6 @@ This repository focuses on **IAM fundamentals that remain relevant regardless of
 - [x] **Security Controls:** Conditional access, MFA fatigue, and Service Desk role.
 - [x] **Governance & Risk:** Access review failures and Model Drift (second-order effects).
 - [x] **Human Factors:** Usability, human behavior, and security impact.
-
----
-
-## 🚀 Career Goal & Vision
-
-My goal is to evolve from a Service Desk Specialist into an **IAM Consultant**. 
-
-I believe that the best consultants are those who have seen firsthand how security policies affect end-users and help-desk operations. This portfolio demonstrates my commitment to:
-* **Deep Systems Thinking:** Moving beyond "clicking buttons" to understanding identity lifecycles.
-* **Proactive Security:** Identifying how manual L1 tasks can be transformed into secure, automated processes.
-* **Knowledge Sharing:** Translating complex IAM concepts into understandable security culture for organizations.
 
 ---
 
