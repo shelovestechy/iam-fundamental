@@ -1,102 +1,57 @@
-# IAM Risk Case: Attribute Based Access Gone Too Far
+# IAM Risk Case: When Attribute-Based Access Goes Too Far
 
-This case shows how attribute based access can create hidden risk
-when attributes are used too widely.
+This case explores how Attribute-Based Access Control (ABAC) can create hidden security risks when attributes are used too broadly across an organization. 
 
-The problem is not ABAC itself.
-The problem is how assumptions grow over time.
+The problem isn't the technology itself—it’s how the assumptions behind the data grow and rot over time.
 
 ## Background
+The organization moves to an ABAC model to cut down on manual access requests. Access is calculated automatically based on attributes like **Department**, **Job Title**, and **Location**.
 
-The organization adopts attribute based access
-to reduce manual access work.
+At first, it’s a success. Onboarding is faster, and the Service Desk sees fewer tickets for basic access. But as the organization grows, the logic becomes a "black box" that nobody fully understands.
 
-Access is calculated automatically using attributes
-like department job title and location.
+## The Situation: Reusing Data for the Wrong Purpose
+The core issue starts when a single attribute—like "Location"—is reused across too many different access rules. 
 
-At first the model works well.
-Onboarding is faster.
-Access requests drop.
+An attribute that was meant to describe the company's physical structure is suddenly being used as a security boundary. As the company expands:
+* One "Location" now covers multiple offices with completely different security needs.
+* Generic job titles are reused across teams with different responsibilities.
+* Regional rules start to overlap and conflict.
 
-Over time the access logic becomes more complex.
+The system is still "correct" according to the rules, but it no longer matches the **original intent**.
 
-## The situation
+## Why the risk is silent
+ABAC failures are notoriously hard to spot because nothing actually "breaks."
+* Access is calculated automatically and consistently.
+* No alerts fire, and no logs show an error.
+* The system behaves exactly as it was designed to.
 
-One attribute, for example location or department,
-is reused across many access rules.
+The risk is **logical, not technical**. You don't realize someone has too much access because the system tells you the attributes match the rule.
 
-The attribute was meant to describe structure,
-not to act as a security boundary.
+## Mover Amplification
+The "Mover" process (internal role changes) makes this risk worse. When a user moves to a new team:
+1. Attributes update in HR.
+2. Access is recalculated instantly.
+3. The old context is wiped out.
 
-As the organization grows:
-- One location now covers many offices with different needs
-- Job titles are reused across teams with different responsibilities
-- Regional rules start to overlap
+If the attribute logic is too broad, a single title change can silently grant a user access far beyond their actual job scope.
 
-Access is still correct according to the rules.
-It no longer matches the original intent.
+## The IAM Perspective
+Attributes are powerful tools, but they aren't security boundaries by default. When an attribute directly controls access, it becomes **security-critical data**. 
 
-## Why the risk is hard to see
+A solid IAM design needs to separate:
+* **Organizational Data:** (Where you sit in the office)
+* **Access Logic:** (What the rules say)
+* **Authorization Boundaries:** (The actual limits of that access)
 
-ABAC problems are hard to notice.
+Without this separation, your ABAC model becomes fragile and unpredictable.
 
-Access is:
-- Calculated automatically
-- Consistent
-- Rarely questioned once it works
+## Lessons Learned
+To keep ABAC from falling apart:
+* **Keep scope tight:** Don't let one attribute control 50 different systems.
+* **Context matters:** Use more than one attribute to make a decision (e.g., Title + Project Code).
+* **Audit the rules, not just the users:** Regularly check if the ABAC rules still make sense for the current business reality.
 
-Nothing breaks.
-No alerts fire.
-The system behaves exactly as designed.
+Automation should support access decisions—it shouldn't silently replace the need for human judgment.
 
-The risk is logical.
-Not technical.
-
-## Mover amplification
-
-Mover events make attribute based risk worse.
-
-When a user changes role or location:
-- Attributes update correctly
-- Access is recalculated instantly
-- Old context is lost
-
-A single attribute change can give access
-far outside the user’s real scope.
-
-## IAM perspective
-
-Attributes are powerful.
-They are not security boundaries by default.
-
-When attributes directly control access
-they become security critical data.
-
-Good IAM design separates:
-- Organizational attributes
-- Access logic
-- Authorization boundaries
-
-Without this separation ABAC becomes fragile.
-
-## How this could have been avoided
-
-Some design choices reduce this risk:
-- Keep attribute scope small
-- Avoid one attribute mapping to many access rights
-- Add context checks next to attributes
-- Review attribute based rules regularly
-
-Automation should support access decisions.
-It should not silently replace them.
-
-## Key takeaway
-
-ABAC does not fail loudly.
-It fails quietly.
-
-Over time access drifts away from intent.
-
-Strong IAM design assumes that attributes
-will be reused misunderstood
-and change meaning as organizations grow.
+## Key Takeaway
+ABAC doesn't fail loudly; it fails quietly. Over time, access drifts away from the original intent. Strong IAM design assumes that attributes will be reused, misunderstood, and changed as the company grows.
