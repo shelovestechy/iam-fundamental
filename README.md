@@ -1,11 +1,20 @@
-# IAM Fundamentals
+# From Service Desk to IAM Consulting
 
-This repository is a practical IAM portfolio focused on identity lifecycle thinking, access design, and real-world risk scenarios.
+This repository is a **structured roadmap and learning portfolio** of an aspiring IAM Specialist. It documents my journey from handling daily identity operations at the Service Desk to understanding the deep architectural logic of Identity & Access Management.
 
-The content reflects how Identity & Access Management works in real organizations: 
-**not as isolated technical features, but as systems shaped by people, processes, and time.**
+> **The Practitioner's Perspective:**
+> My daily work involves Entra ID and Azure AD, starting from the basics: password resets and user onboarding. However, seeing the same issues repeat in L1 tickets sparked a passion to understand the "why" behind the "how." This repository is my deep-dive into the L2/L3 logic, aimed at bridging the gap between technical execution and high-level IAM consulting.
 
-IAM is as much about clarity and restraint as it is about access.
+---
+
+## 🚀 Career Goal & Vision
+
+My goal is to evolve from a Service Desk Specialist into an **IAM Consultant**. 
+
+I believe that the best consultants are those who have seen firsthand how security policies affect end-users and help-desk operations. This portfolio demonstrates my commitment to:
+* **Deep Systems Thinking:** Moving beyond "clicking buttons" to understanding identity lifecycles.
+* **Proactive Security:** Identifying how manual L1 tasks can be transformed into secure, automated processes.
+* **Knowledge Sharing:** Translating complex IAM concepts into understandable security culture for organizations.
 
 ---
 
@@ -21,8 +30,6 @@ This repository focuses on **IAM fundamentals that remain relevant regardless of
 - [x] **Governance & Drift:** Access reviews, approvals, and the accumulation of stale access.
 - [x] **Hybrid Realities:** Risks inherent in AD and Entra ID co-existence.
 - [x] **The Human Factor:** Behavior, usability, and the Service Desk as a security control.
-
-> **Key Perspective:** The emphasis is on **how IAM systems fail quietly**, not how they are supposed to work on paper.
 
 ---
 
