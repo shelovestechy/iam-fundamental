@@ -7,29 +7,17 @@ This repository is a **structured roadmap and learning portfolio** of an aspirin
 
 ---
 
-## 🚀 Career Goal & Vision
+## 🛠 Core IAM Themes
 
-My goal is to evolve from a Service Desk Specialist into an **IAM Consultant**. 
+This repository focuses on **IAM fundamentals that remain relevant regardless of tools or vendors**. These themes represent the foundation of my consulting mindset:
 
-I believe that the best consultants are those who have seen firsthand how security policies affect end-users and help-desk operations. This portfolio demonstrates my commitment to:
-* **Deep Systems Thinking:** Moving beyond "clicking buttons" to understanding identity lifecycles.
-* **Proactive Security:** Identifying how manual L1 tasks can be transformed into secure, automated processes.
-* **Knowledge Sharing:** Translating complex IAM concepts into understandable security culture for organizations.
-
----
-
-## 🛠 What this repository contains
-
-This repository focuses on **IAM fundamentals that remain relevant regardless of tools or vendors**.
-
-### Core Themes
-- [x] **Identity Lifecycle Thinking:** Deep dive into Joiner–Mover–Leaver (JML) processes.
-- [x] **System-Level Architecture:** Master Mental Model of IAM flows.
-- [x] **Access Logic:** Entitlement logic and access models (RBAC, ABAC).
-- [x] **Contextual Risk:** Conditional access and real-world risk factors.
-- [x] **Governance & Drift:** Access reviews, approvals, and the accumulation of stale access.
-- [x] **Hybrid Realities:** Risks inherent in AD and Entra ID co-existence.
-- [x] **The Human Factor:** Behavior, usability, and the Service Desk as a security control.
+* **Identity Lifecycle Thinking:** Deep dive into Joiner–Mover–Leaver (JML) processes.
+* **System-Level Architecture:** Master Mental Model of IAM flows.
+* **Access Logic:** Entitlement logic and access models (RBAC, ABAC).
+* **Contextual Risk:** Conditional access and real-world risk factors.
+* **Governance & Drift:** Access reviews, approvals, and the accumulation of stale access.
+* **Hybrid Realities:** Risks inherent in AD and Entra ID co-existence.
+* **The Human Factor:** Behavior, usability, and the Service Desk as a security control.
 
 ---
 
@@ -52,6 +40,17 @@ This repository focuses on **IAM fundamentals that remain relevant regardless of
 - [x] **Security Controls:** Conditional access, MFA fatigue, and Service Desk role.
 - [x] **Governance & Risk:** Access review failures and Model Drift (second-order effects).
 - [x] **Human Factors:** Usability, human behavior, and security impact.
+
+---
+
+## 🚀 Career Goal & Vision
+
+My goal is to evolve from a Service Desk Specialist into an **IAM Consultant**. 
+
+I believe that the best consultants are those who have seen firsthand how security policies affect end-users and help-desk operations. This portfolio demonstrates my commitment to:
+* **Deep Systems Thinking:** Moving beyond "clicking buttons" to understanding identity lifecycles.
+* **Proactive Security:** Identifying how manual L1 tasks can be transformed into secure, automated processes.
+* **Knowledge Sharing:** Translating complex IAM concepts into understandable security culture for organizations.
 
 ---
 
