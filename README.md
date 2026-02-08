@@ -2,88 +2,65 @@
 
 This repository is a practical IAM portfolio focused on identity lifecycle thinking, access design, and real-world risk scenarios.
 
-The content reflects how Identity & Access Management works in real organizations:
-not as isolated technical features, but as systems shaped by people, processes, and time.
+The content reflects how Identity & Access Management works in real organizations: 
+**not as isolated technical features, but as systems shaped by people, processes, and time.**
 
 IAM is as much about clarity and restraint as it is about access.
 
 ---
 
-## What this repository contains
+## 🛠 What this repository contains
 
 This repository focuses on **IAM fundamentals that remain relevant regardless of tools or vendors**.
 
-Core themes include:
-- identity lifecycle thinking (Joiner–Mover–Leaver)
-- authentication vs authorization boundaries
-- access models and entitlement logic
-- conditional access and contextual risk
-- access reviews, approvals, and drift
-- hybrid identity risks (Active Directory and Entra ID)
-- human behavior as a security factor
-- second-order IAM failures and long-term risk accumulation
+### Core Themes
+- [x] **Identity Lifecycle Thinking:** Deep dive into Joiner–Mover–Leaver (JML) processes.
+- [x] **System-Level Architecture:** Master Mental Model of IAM flows.
+- [x] **Access Logic:** Entitlement logic and access models (RBAC, ABAC).
+- [x] **Contextual Risk:** Conditional access and real-world risk factors.
+- [x] **Governance & Drift:** Access reviews, approvals, and the accumulation of stale access.
+- [x] **Hybrid Realities:** Risks inherent in AD and Entra ID co-existence.
+- [x] **The Human Factor:** Behavior, usability, and the Service Desk as a security control.
 
-The emphasis is on **how IAM systems fail quietly**, not how they are supposed to work on paper.
-
----
-
-## Repository structure
-
-### `/diagrams`
-Conceptual diagrams that visualize IAM assumptions, boundaries, and failure modes.
-
-These diagrams are thinking tools, not architecture blueprints.
-They are meant to support design discussions, reviews, and interviews.
-
-Examples include:
-- IAM Assumption Chain
-- Authentication vs Authorization boundary
-- JML lifecycle failure points
-- Hybrid identity (AD vs Entra ID)
-
-See: [`/diagrams`](./diagrams)
+> **Key Perspective:** The emphasis is on **how IAM systems fail quietly**, not how they are supposed to work on paper.
 
 ---
 
-### `/docs`
-Written analysis, design reasoning, and IAM case studies.
+## 📂 Repository Structure
 
-The documents explore IAM from a system-level perspective, including:
-- lifecycle automation and deprovisioning failures
-- access models (RBAC, ABAC, and hybrid approaches)
-- conditional access trade-offs
-- access review breakdowns
-- incident and phishing scenarios
-- human behavior and usability impacts
-- service desk as a security control
-- second-order IAM effects such as model drift
+### [x] [`/diagrams`](./diagrams)
+**Conceptual diagrams that visualize IAM assumptions, boundaries, and failure modes.**
 
-The documents are intentionally practical and opinionated.
-They focus on reasoning, not configuration steps.
+- [x] **IAM Master Mental Model** (`iam-system-thinking.png`)
+- [x] **The IAM Assumption Chain** (`iam-assumption-chain.drawio.png`)
+- [x] **JML Lifecycle failure points** (`jml-lifecycle-assumptions.drawio.png`)
+- [x] **Authentication vs. Authorization boundary** (`authn-vs-authz-boundary.drawio.png`)
+- [x] **Hybrid identity flow** (`hybrid-identity-ad-entra.drawio.png`)
 
-See: [`/docs`](./docs)
+### [x] [`/docs`](./docs)
+**Written analysis, design reasoning, and IAM case studies.**
 
----
-
-## Why this repository exists
-
-Most IAM documentation explains how systems are supposed to work.
-
-This repository focuses on where they predictably don’t.
-
-It demonstrates IAM thinking rather than tool-specific configuration and highlights how small design decisions accumulate into long-term security risk, operational friction, and access drift.
-
-This repository is intended to support:
-- architectural thinking
-- IAM design and review discussions
-- risk analysis
-- interviews and portfolio review
-
-It does not aim to be exhaustive or prescriptive.
-It aims to make assumptions visible.
+- [x] **Identity Lifecycle:** JML cases, Joiner automation, and Leaver failures.
+- [x] **Access Models:** RBAC, ABAC, and entitlement reasoning.
+- [x] **Security Controls:** Conditional access, MFA fatigue, and Service Desk role.
+- [x] **Governance & Risk:** Access review failures and Model Drift (second-order effects).
+- [x] **Human Factors:** Usability, human behavior, and security impact.
 
 ---
 
-## License
+## 🎯 Why this repository exists
+
+Most IAM documentation explains how systems are *supposed* to work. **This repository focuses on where they predictably don’t.**
+
+It demonstrates IAM thinking rather than tool-specific configuration. It highlights how small design decisions accumulate into long-term security risk, operational friction, and access drift.
+
+**This repository supports:**
+* Architectural thinking & design reviews.
+* Risk analysis and mitigation planning.
+* Interview preparation and portfolio demonstration.
+
+---
+
+## ⚖️ License
 
 MIT
