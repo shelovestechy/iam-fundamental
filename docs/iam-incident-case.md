@@ -1,86 +1,70 @@
 # IAM Incident Case Study: Excessive Access After Role Change
 
-This case describes a realistic access incident caused by weak identity lifecycle controls.
-The goal is not to blame anyone.
-The goal is to understand how IAM problems build up over time.
+This case describes a realistic access incident caused by weak identity lifecycle controls. It demonstrates how "silent risk" builds up when automation and governance are not perfectly aligned.
 
-## Background
+The system worked exactly as programmed—but the program was incomplete.
 
-A mid-sized organization uses role based access together with attribute based automation.
-User access is mainly assigned using job title and department.
+---
 
-The Joiner process is documented and works reasonably well.
-Mover and Leaver processes exist,
-but they depend heavily on manual actions and assumptions.
+## Background: The Setup
+The organization uses a mix of **RBAC** (Role-Based Access Control) and **ABAC** (Attribute-Based Access Control) to manage permissions.
 
-## The incident
+* **Concept - RBAC (Role-Based Access Control):** Access is granted based on a job role (e.g., "Sales Representative"). If you are in that role, you get a predefined bundle of rights.
+* **Concept - ABAC (Attribute-Based Access Control):** Access is granted based on specific attributes, such as `Department = Sales` or `Location = Finland`. 
+* **The Gap:** The "Joiner" process (hiring) is sharp, but the **"Mover" process** (role changes) is treated as a simple update rather than a security event.
 
-An employee moves from a regional support role
-to a centralized reporting role.
+---
 
-The job title attribute is updated.
-New access is granted automatically.
+## The Incident: The "Accumulator" User
+An employee moves from a **Regional Support** role to a **Centralized Reporting** role.
 
-Access from the old role is not removed.
+1.  **The Trigger:** HR updates the user’s Job Title and Department attributes in the identity system.
+2.  **The Automation:** The IAM system sees the new attributes and automatically grants high-level reporting access to financial databases.
+3.  **The Failure:** There is no "Subtract" logic in the automation. The old regional support permissions (local server access, customer data) are not revoked.
 
-The user now has:
-- Reporting access needed for the new role
-- Operational access from the old regional role
+**The Result:** The user becomes an **"Accumulator"** (suffering from **Role Creep**). They have the keys to the new office, but they kept the keys to the old one too.
 
-Nothing breaks.
-No alerts are triggered.
-The user keeps working as usual.
+---
 
-## Detection
+## The Concept: Toxic Combinations (SoD)
+The real danger here isn't just "too much access." It’s a **Toxic Combination** that breaks **Segregation of Duties (SoD)**.
 
-The issue is found months later during a regular access review.
-By this time the extra access has existed for a long time
-without anyone noticing or questioning it.
+* **Concept - Segregation of Duties (SoD):** A security principle where a single person should not have enough influence to both *initiate* and *approve* a high-risk action (like a payment or a system change).
+* **The Scenario:** In their old role, the user could create support tickets. In their new role, they can approve budget allocations. 
+* **The Risk:** A user with both sets of rights could potentially create a fake request and then approve it themselves, bypassing all internal controls.
 
-There is no sign of malicious intent.
-The risk exists anyway.
+---
 
-## Root causes
+## Detection: The "Audit Lag"
+The issue is discovered months later during a periodic **Access Certification** (also known as an Access Review). 
 
-The incident is not caused by one single mistake.
+* **Concept - Access Certification:** A formal process where managers must review a list of their employees' current permissions and confirm they are still necessary.
+* **The Reality:** For months, the organization had a massive security hole. If this user’s account had been compromised, the **Blast Radius** (the total extent of data an attacker can reach) would have been twice as large as it should have been.
 
-Several things contribute to it:
-- Mover events do not trigger a required access review
-- Attribute based access rules are too broad
-- No clear owner for access removal
-- Trust that automation will always do the right thing
+---
 
-Each part works on its own.
-Together they create risk.
+## Root Causes: Why Automation Failed
+1.  **Broad Attribute Logic:** The ABAC rules were designed only to *grant* access. They lacked the "Inverse" logic needed to *revoke* access when an attribute (like Department) changes.
+2.  **Lack of Mover-Triggers:** The system didn't recognize a change in attributes as a reason to "Reset" or "Re-verify" the user’s entire profile.
+3.  **Silent Risk Transfer:** IT assumed the manager would report what to remove. The manager assumed the system handled the cleanup. This is a classic governance failure.
 
-## IAM perspective
+---
 
-This incident shows a common IAM weakness:
-access is easy to give
-and hard to take away.
+## How to Prevent "Role Creep"
+To fix this, the IAM architecture needs **Identity Governance (IGA)** principles:
 
-Automation makes work faster,
-but it also makes design problems bigger.
+* **Concept - Mover-Event Certification:** Any change in Job Title or Department should automatically trigger a task for the manager to review and explicitly revoke old permissions.
+* **Concept - Zero-Baseline Principle:** When a user moves, the safest approach is to **strip all non-standard access** and force the new manager to request only what is truly needed for the new role.
+* **Concept - Dynamic Role Mapping:** Ensuring that a user cannot be a member of two conflicting roles simultaneously. If you move to Role B, you are automatically removed from Role A.
 
-The system works exactly as designed.
-The design is the problem.
+---
 
-## How this could have been prevented
+## IAM Perspective: The "Sticky" Permission Problem
+This incident shows a common IAM truth: **Access is "sticky."** It’s easy to give, but it requires intentional design to take away.
 
-Some simple controls would reduce this risk:
-- Required access review after every Mover event
-- Clear separation between baseline access and elevated access
-- Clear ownership of role and access mappings
-- Regular review of attribute based access logic
+Automation makes work faster, but without **Governance**, it just creates a faster way to make mistakes. Strong IAM is not about how you handle the "Joiner"—it’s about how you manage the **"Mover" and the "Leaver."**
 
-## Key takeaway
+## Key Takeaway
+IAM incidents often grow quietly. They are rarely dramatic breaches. Most of the time, they are slow build-ups of access that no longer matches the human reality. 
 
-IAM incidents often grow quietly.
-They are rarely dramatic.
-
-Most of the time they are slow build-ups
-of access that no longer matches reality.
-
-Strong IAM focuses less on reacting to incidents
-and more on building processes
-that make these situations unlikely.
+**Strong IAM focuses less on reacting to incidents and more on building the "Security Hygiene" that makes role-based risk impossible.**
