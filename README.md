@@ -1,72 +1,62 @@
 # From Service Desk to IAM Consulting
 
-This repository is a **structured roadmap and learning portfolio** of an aspiring IAM Specialist. It documents my journey from handling daily identity operations at the Service Desk to understanding the deep architectural logic of Identity & Access Management.
+This repo is a roadmap of my move from daily Service Desk operations to the world of IAM consulting. 
+
+> **The Reality Check:**
+> I spend my days in Entra ID and Azure AD doing the basics: password resets and user onboarding. But seeing the same L1 tickets fail over and over made me want to understand the "why" behind the mess. This repo is my deep-dive into the L2/L3 logic—bridging the gap between "clicking buttons" and actual IAM strategy.
 
 ---
 
-## 🚀 Career Goal & Vision
+## 🚀 Career Goal
 
-My goal is to evolve from a Service Desk Specialist into an **IAM Consultant**. 
+My goal: **IAM Consultant.**
 
-I believe that the best consultants are those who have seen firsthand how security policies affect end-users and help-desk operations. This portfolio demonstrates my commitment to:
-* **Deep Systems Thinking:** Moving beyond "clicking buttons" to understanding identity lifecycles.
-* **Proactive Security:** Identifying how manual L1 tasks can be transformed into secure, automated processes.
-* **Knowledge Sharing:** Translating complex IAM concepts into understandable security culture for organizations.
+The best consultants are the ones who have seen firsthand how bad security policies actually hurt the end-user and the help desk. I’m moving from "fixing symptoms" (resets) to "fixing the system" (design).
 
-> **The Practitioner's Perspective:**
-> My daily work involves Entra ID and Azure AD, starting from the basics: password resets and user onboarding. However, seeing the same issues repeat in L1 tickets sparked a passion to understand the "why" behind the "how." This repository is my deep-dive into the L2/L3 logic, aimed at bridging the gap between technical execution and high-level IAM consulting.
+* **Systems Thinking:** No more just clicking buttons. I want to own the lifecycle logic.
+* **Proactive Security:** Finding ways to turn manual L1 chaos into clean, automated processes.
+* **Knowledge Sharing:** Breaking down complex IAM jargon into something people actually understand.
 
 ---
 
 ## 🛠 Core IAM Themes
 
-This repository focuses on **IAM fundamentals that remain relevant regardless of tools or vendors**. These themes represent the foundation of my consulting mindset:
+This is the foundation of my consulting mindset. I focus on the stuff that stays relevant no matter what vendor or tool is used:
 
-* **Identity Lifecycle Thinking:** Deep dive into Joiner–Mover–Leaver (JML) processes.
-* **System-Level Architecture:** Master Mental Model of IAM flows.
-* **Access Logic:** Entitlement logic and access models (RBAC, ABAC).
-* **Contextual Risk:** Conditional access and real-world risk factors.
-* **Governance & Drift:** Access reviews, approvals, and the accumulation of stale access.
-* **Hybrid Realities:** Risks inherent in AD and Entra ID co-existence.
-* **The Human Factor:** Behavior, usability, and the Service Desk as a security control.
+* **Identity Lifecycle:** How Joiner–Mover–Leaver (JML) actually works (or fails).
+* **System Architecture:** The master flow of identity data and decisions.
+* **Access Models:** The logic behind "who gets what" (RBAC, ABAC).
+* **Contextual Risk:** Why MFA isn't a silver bullet.
+* **Governance & Drift:** How access gets messy over time and why reviews often fail.
+* **Hybrid Reality:** The gap between old-school AD and Entra ID.
+* **The Human Factor:** Why users and Service Desks are the real security perimeter.
 
 ---
 
 ## 📂 Repository Structure
 
 ### [x] [`/diagrams`](./diagrams)
-**Conceptual diagrams that visualize IAM assumptions, boundaries, and failure modes.**
-
-- [x] **IAM Master Mental Model** (`iam-system-thinking.png`)
-- [x] **The IAM Assumption Chain** (`iam-assumption-chain.drawio.png`)
-- [x] **JML Lifecycle failure points** (`jml-lifecycle-assumptions.drawio.png`)
-- [x] **Authentication vs. Authorization boundary** (`authn-vs-authz-boundary.drawio.png`)
-- [x] **Hybrid identity flow** (`hybrid-identity-ad-entra.drawio.png`)
+**Thinking tools to visualize how things break.**
+- [x] **Master Model:** The anchor for the whole repo.
+- [x] **Assumption Chain:** Why IAM relies on shaky foundations.
+- [x] **JML Failures:** Where the lifecycle falls apart piece by piece.
+- [x] **AuthN vs AuthZ:** The line between identity proof and access decisions.
+- [x] **Hybrid Flow:** The messy link between AD and Entra ID.
 
 ### [x] [`/docs`](./docs)
-**Written analysis, design reasoning, and IAM case studies.**
-
-- [x] **Identity Lifecycle:** JML cases, Joiner automation, and Leaver failures.
-- [x] **Access Models:** RBAC, ABAC, and entitlement reasoning.
-- [x] **Security Controls:** Conditional access, MFA fatigue, and Service Desk role.
-- [x] **Governance & Risk:** Access review failures and Model Drift (second-order effects).
-- [x] **Human Factors:** Usability, human behavior, and security impact.
+**Analysis, reasoning, and real-world cases.**
+- [x] **Identity Lifecycle:** JML cases and deprovisioning failures.
+- [x] **Access Models:** RBAC, ABAC, and entitlement logic.
+- [x] **Security Controls:** MFA fatigue, phishing, and the Service Desk's role.
+- [x] **Governance & Risk:** Why access reviews fail and how "drift" happens.
 
 ---
 
-## 🎯 Why this repository exists
+## 🎯 Why this exists
 
-Most IAM documentation explains how systems are *supposed* to work. **This repository focuses on where they predictably don’t.**
-
-It demonstrates IAM thinking rather than tool-specific configuration. It highlights how small design decisions accumulate into long-term security risk, operational friction, and access drift.
-
-**This repository supports:**
-* Architectural thinking & design reviews.
-* Risk analysis and mitigation planning.
-* Interview preparation and portfolio demonstration.
+Most documentation tells you how things *should* work. **This repo is about where they don't.** I built this to show my thinking process. It’s not about product configurations; it's about spotting risks and design flaws before they become incidents. It’s proof that I’m not just a "reset guy"—I'm a future consultant.
 
 ---
 
 ## ⚖️ License
-
 MIT
