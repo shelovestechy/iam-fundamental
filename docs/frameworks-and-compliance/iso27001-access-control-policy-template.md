@@ -63,9 +63,4 @@ Managers must regularly check who has access.
 Breaking these rules (like sharing passwords or bypassing MFA) leads to disciplinary action.
 * **In Practice:** If an employee is caught using a colleague's credentials to look at private files, it is treated as a serious security breach.
 
----
 
-## Document Control
-| Version | Date | Description | Author |
-| :--- | :--- | :--- | :--- |
-| 1.0 | 2026-02-08 | Initial Policy with Practical Examples | [Your Name] |
