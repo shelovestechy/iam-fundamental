@@ -1,118 +1,73 @@
 # IAM Case: Access That Works — But Should Not Be Granted
 
-This case describes a situation often seen at Service Desk level.
-Nothing is broken.
-The user can work.
-Systems are stable.
+In the world of IAM, "it works" does not mean "it’s secure." This case describes a situation every Service Desk Specialist faces: An access request that sounds perfectly reasonable, but should never be handled directly by IT.
 
-And an access request arrives that should not be handled directly.
+The goal here is to understand the **Golden Rule of Access**: IT implements the access, but the Business must own the decision.
 
-## The golden rule
+---
 
-Access is never granted based only on a user request.
+## The Golden Rule: Ownership Over Convenience
+Access is never granted based only on a user request. 
 
-Not because users cannot be trusted,
-but because access decisions must have ownership.
+Not because we don't trust the user, but because every permission carries risk. If a Service Desk Specialist grants access without a manager's sign-off, they are participating in **Silent Risk Transfer**. They are taking the responsibility for a business decision they don't have the context to make.
 
-Access always requires manager approval.
+**The rule protects three parties:**
+1.  **The User:** They aren't accidentally given access they shouldn't have (avoiding future audit issues).
+2.  **The Specialist:** They aren't held accountable if that access is later misused.
+3.  **The Organization:** It ensures that every "key" handed out is documented and approved by someone who understands the business impact.
 
-This rule protects:
-- The user
-- The Service Desk
-- The organization
+---
 
-## Background
+## Background: The "Shadow" of Legacy Access
+Over time, organizations become messy. People change roles, projects end, but permissions tend to stick around like ghosts. 
 
-The organization has grown over time.
-There have been role changes reorganizations
-temporary access and system migrations.
+* **Role Creep:** "I had this access in my old team, I might still need it."
+* **The Peer Pressure:** "My colleague has this folder, so I should have it too."
+* **The Just-in-Case trap:** "I don't need it daily, but grant it just in case of an emergency."
 
-Some access is role based.
-Some is automated.
-Some still relies on manual requests.
+Without a strict approval process, these requests turn a clean IAM environment into a security nightmare within months.
 
-No major incidents have occurred.
+---
 
-## What becomes visible at Service Desk
+## The Situation: The "Helpful" Request
+A user moving to a new role contacts the Service Desk. They ask for a long list of new permissions and specifically ask to keep their old ones "for a few months to help with the transition."
 
-At Service Desk level similar requests appear repeatedly:
-- “I need this access for my new role”
-- “I had this access before, can I keep it”
-- “My colleague has this, I should have it too”
+To a tired or rushed admin, this looks like a way to "help the user stay productive." **This is where the Golden Rule holds the line.**
 
-The requests sound reasonable.
-They are not malicious.
+---
 
-But they are still access decisions.
+## Why the Specialist Cannot Be the Decision-Maker
+The Service Desk Specialist is a technical expert, not a business manager. They cannot know:
+* If the access matches the new role's actual requirements.
+* If the old access creates a **Conflict of Interest** (e.g., someone being able to both order and approve a payment).
+* Who is accountable if a data breach occurs through that specific account.
 
-## The situation
+**Granting access directly isn't "good service"—it’s a lack of governance.**
 
-A user contacts the Service Desk.
-They are moving to a new role.
+---
 
-They ask for new access.
-They also ask to keep old access “just in case”.
+## The Professional Response: Redirect, Don't Reject
+A well-trained Service Desk doesn't just block a request; they route it through the proper **IAM Workflow**.
 
-The user expects the Service Desk to decide.
+1.  **Verification:** The Specialist confirms who is asking.
+2.  **Redirection:** The request is sent to the **Data Owner** or the **Manager**.
+3.  **Documentation:** Every approval is logged (Auditable Evidence).
+4.  **Implementation:** Access is granted only *after* the business takes ownership of the risk.
 
-This is where the golden rule matters.
+---
 
-## Why user requests are not enough
+## IAM Perspective: Trust is not a Security Control
+IAM is about placing decisions at the right level. 
 
-The Service Desk cannot know:
-- Whether the access matches the role
-- Whether it is still needed
-- What risk it carries
-- Who is accountable if something goes wrong
+* **Users** explain what they *need* to do their job.
+* **Managers/Owners** decide if that need outweighs the *risk*.
+* **IAM Specialists** enforce the decision and ensure the "door" is locked correctly.
 
-Granting access directly would shift responsibility
-to the wrong place.
+This creates **Accountability**. When the next **Access Review** (Recertification) happens, the manager will see a list of people they approved, and they have to justify why that access still exists.
 
-That is not support.
-That is silent risk transfer.
+---
 
-## The correct handling
+## Key Takeaway
+The Service Desk should never be the owner of access decisions. Redirecting a request to a manager isn't "red tape" or bureaucracy—it is **Risk Control** in its purest form.
 
-The Service Desk does not deny the request.
-It redirects it.
-
-Steps taken:
-- The request is routed to the user’s manager
-- The manager confirms or denies the access
-- The approval is documented
-- Access is granted only after approval
-
-This keeps responsibility where it belongs.
-
-## Why this protects everyone
-
-Manager approval:
-- Confirms business need
-- Creates accountability
-- Makes access intentional
-- Protects the Service Desk from blame later
-
-When access is approved properly,
-everyone knows why it exists.
-
-## IAM perspective
-
-IAM is not about trusting or distrusting users.
-It is about placing decisions at the right level.
-
-Users explain what they need.
-Managers decide if it should be granted.
-IAM enforces and documents the decision.
-
-Breaking this chain creates risk.
-
-## Key takeaway
-
-Service Desk should never be the decision-maker for access.
-
-Redirecting access requests is not bureaucracy.
-It is risk control.
-
-The golden rule exists to make access safe,
-auditable
-and owned.
+Good IAM design makes the secure path the standard path. It ensures that every permission is **Safe, Auditable, and Owned.**
