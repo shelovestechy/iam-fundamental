@@ -1,100 +1,69 @@
 # IAM Fundamentals – Diagrams
 
-This repository contains conceptual IAM diagrams focused on assumptions, boundaries and failure modes.
+This directory contains conceptual IAM diagrams focused on **assumptions, boundaries, and failure modes**. 
 
-These are not product diagrams.  
-They are not vendor specific.  
-They are thinking tools.
+These are not product diagrams or vendor-specific architectures. They are **thinking tools** designed to visualize how IAM systems work—and where they predictably fail.
 
-IAM systems rarely fail at login.  
-They fail at assumptions.
+> **Key Insight:** IAM systems rarely fail at the login screen. They fail at the assumptions made during the lifecycle.
 
 ---
 
-## Diagrams
+## 🖼 The Diagrams
 
-### IAM Assumption Chain
-[Open diagram →](./iam-assumption-chain.drawio.png)
+### 1. IAM Assumption Chain
+**[Open Diagram](./iam-assumption-chain.drawio.png)**
 
-Maps the identity lifecycle from HR event to access drift.
+Maps the identity lifecycle from an HR event to eventual access drift. It highlights the implicit assumptions IAM systems rely on and how they decay over time.
 
-The diagram highlights the implicit assumptions IAM systems rely on and how those assumptions predictably fail over time.
-
-Focus areas:
-- HR as a non-security source
-- attribute decay
-- automation amplifying bad data
-- approval without accountability
-- reviews that legitimize drift
-- access drift as the default state
-
-Key idea:  
-Assumptions hold systems together until they quietly break them.
+* **Focus Areas:** HR as a non-security source, attribute decay, automation amplifying bad data, and reviews that inadvertently legitimize drift.
+* **Key Idea:** *Assumptions hold systems together until they quietly break them.*
 
 ---
 
-### Authentication vs Authorization
-[Open diagram →](./authn-vs-authz-boundary.drawio.png)
+### 2. Authentication vs. Authorization Boundary
+**[Open Diagram](./authn-vs-authz-boundary.drawio.png)**
 
-A boundary-focused comparison of Authentication (AuthN) and Authorization (AuthZ).
+A boundary-focused comparison of **AuthN** (Who are you?) and **AuthZ** (What can you do?). It demonstrates why strong authentication does not automatically guarantee safe or appropriate access.
 
-The diagram separates identity proof from access decisions and shows why strong authentication does not guarantee safe access.
-
-Focus areas:
-- AuthN answers who you are
-- AuthZ answers whether you are allowed
-- MFA success being mistaken for authorization
-- tokens outliving context and intent
-- authorization logic being largely invisible
-
-Key idea:  
-Strong authentication often hides weak authorization.
+* **Focus Areas:** The separation of identity proof from access decisions, MFA success being mistaken for authorization, and tokens outliving their original context.
+* **Key Idea:** *Strong authentication often masks weak authorization.*
 
 ---
 
-### JML Lifecycle (Joiner–Mover–Leaver)
-[Open diagram →](./jml-lifecycle-assumptions.drawio.png)
+### 3. JML Lifecycle (Joiner–Mover–Leaver)
+**[Open Diagram](./jml-lifecycle-assumptions.drawio.png)**
 
-A lifecycle-focused view of Joiner, Mover and Leaver events and where identity controls quietly break.
+A lifecycle-focused view of the critical transition points (Joiner, Mover, Leaver) where identity controls often break due to process gaps.
 
-Focus areas:
-- HR-driven lifecycle assumptions
-- delayed or missing events
-- role and attribute drift
-- weak deprovisioning
-
-Key idea:  
-Lifecycle control fails gradually, not at a single point.
+* **Focus Areas:** HR-driven lifecycle assumptions, delayed "Mover" events (role changes), and the risks of incomplete deprovisioning.
+* **Key Idea:** *Lifecycle control fails gradually through accumulation, not at a single point.*
 
 ---
 
-### Hybrid Identity: Active Directory vs Entra ID
-[Open diagram →](./hybrid-identity-ad-entra.drawio.png)
+### 4. Hybrid Identity: AD vs. Entra ID
+**[Open Diagram](./hybrid-identity-ad-entra.drawio.png)**
 
-A high-level hybrid identity model showing the trust and control gap between on-prem Active Directory and cloud Entra ID.
+Visualizes the trust and control gap between on-premises Active Directory and cloud-based Entra ID.
 
-Focus areas:
-- shared identities across separate control planes
-- sync delays and failures
-- stale objects remaining active
-- cloud policies not removing on-prem access
-
-Key idea:  
-Hybrid identity creates shared trust without shared control.
+* **Focus Areas:** Shared identities across separate control planes, sync delays, and the challenge of cloud policies not reflecting on-premise realities.
+* **Key Idea:** *Hybrid identity creates shared trust without shared control.*
 
 ---
 
-## Why this repository exists
+### 5. IAM Master Mental Model
+**[Open Diagram](./iam-system-thinking.png)**
 
-Most IAM documentation explains how systems are supposed to work.  
-This repository focuses on where they predictably don’t.
+The "anchor" diagram of this repository. It visualizes IAM as a continuous timeline of decisions and feedback loops.
 
-These diagrams are meant to support:
-- architectural thinking
-- risk discussions
-- IAM reviews
-- interviews and design conversations
+* **Focus Areas:** From identity creation to risk accumulation and the necessity of feedback.
 
-They are intentionally opinionated.  
-They are intentionally incomplete.  
-They are meant to provoke better questions, not provide final answers.
+---
+
+## 🎯 Purpose of these Tools
+
+Most IAM documentation explains how systems *should* work. These diagrams focus on **where they don’t.** They are designed to support:
+* **Architectural Thinking:** Moving beyond vendor features.
+* **Risk Discussions:** Highlighting invisible failure points.
+* **Consulting & Reviews:** Providing a visual aid for design conversations and interviews.
+
+These tools are intentionally opinionated and designed to provoke better questions, rather than provide final, static answers.
