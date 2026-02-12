@@ -56,5 +56,22 @@ Most documentation tells you how things *should* work. **This repository is abou
 
 ---
 
+# ⚠️ Disclaimer & Work in Progress
+
+Tämä portfolio on jatkuvasti kehittyvä kokonaisuus ja heijastaa sen hetkistä oppimisprosessiani sekä kenttätyössä tehtyjä havaintoja.
+
+**Tiedostan, että vaikka esitetyt ratkaisut ja arkkitehtuurimallit näyttävät paperilla hyviltä, niiden toteuttaminen käytännössä ei ole aina mahdollista tai edes järkevää kaikissa yrityksissä.**
+
+### Miksi malliesimerkit eivät aina päde?
+* **Tekninen velka:** Legacy-järjestelmät voivat estää modernin automaation käytön.
+* **Resurssit:** Kaikilla organisaatioilla ei ole varaa tarvittaviin lisensseihin tai dedikoituun IAM-tiimiin.
+* **Kulttuuri:** Tiukka pääsynhallinta vaatii muutosjohtamista, johon organisaatio ei välttämättä ole valmis.
+
+En tarjoa näitä vastauksia "ainoana oikeana totuutena", vaan osoituksena siitä, että ymmärrän nykyaikaisen identiteetinhallinnan periaatteet ja osaan analysoida niitä kriittisesti suhteessa reaalimaailman rajoitteisiin.
+
+**Tämä portfolio ei ole valmis – eikä IAM koskaan ole.**
+
+---
+
 ## ⚖️ License
 MIT
