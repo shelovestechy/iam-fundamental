@@ -58,18 +58,18 @@ Most documentation tells you how things *should* work. **This repository is abou
 
 # ⚠️ Disclaimer & Work in Progress
 
-Tämä portfolio on jatkuvasti kehittyvä kokonaisuus ja heijastaa sen hetkistä oppimisprosessiani sekä kenttätyössä tehtyjä havaintoja.
+This portfolio is a continuously evolving project reflecting my ongoing learning process and observations from frontline field work.
 
-**Tiedostan, että vaikka esitetyt ratkaisut ja arkkitehtuurimallit näyttävät paperilla hyviltä, niiden toteuttaminen käytännössä ei ole aina mahdollista tai edes järkevää kaikissa yrityksissä.**
+**I am fully aware that while the proposed solutions and architectural models look good on paper, implementing them in practice is not always possible or even sensible for every organization.**
 
-### Miksi malliesimerkit eivät aina päde?
-* **Tekninen velka:** Legacy-järjestelmät voivat estää modernin automaation käytön.
-* **Resurssit:** Kaikilla organisaatioilla ei ole varaa tarvittaviin lisensseihin tai dedikoituun IAM-tiimiin.
-* **Kulttuuri:** Tiukka pääsynhallinta vaatii muutosjohtamista, johon organisaatio ei välttämättä ole valmis.
+### Why ideal models don't always apply:
+* **Technical Debt:** Legacy systems often prevent the use of modern automation.
+* **Resources:** Not every organization can afford the required licensing or a dedicated IAM team.
+* **Culture:** Tight access management requires change management that an organization might not be ready for.
 
-En tarjoa näitä vastauksia "ainoana oikeana totuutena", vaan osoituksena siitä, että ymmärrän nykyaikaisen identiteetinhallinnan periaatteet ja osaan analysoida niitä kriittisesti suhteessa reaalimaailman rajoitteisiin.
+I do not offer these answers as the "one and only truth," but as a demonstration that I understand modern identity management principles and can analyze them critically against real-world constraints.
 
-**Tämä portfolio ei ole valmis – eikä IAM koskaan ole.**
+**This portfolio is not finished—and neither is IAM.**
 
 ---
 
